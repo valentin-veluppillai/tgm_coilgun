@@ -1,0 +1,568 @@
+EESchema Schematic File Version 4
+LIBS:Coilgun_final-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ATMEGA8535-16PU U1
+U 1 1 59C28E87
+P 2200 3400
+F 0 "U1" H 1400 5300 50  0000 C CNN
+F 1 "ATMEGA8535-16PU" H 2800 1500 50  0000 C CNN
+F 2 "Coilgun_Footprints:DIP-40_0_ELL" H 2200 3400 50  0001 C CIN
+F 3 "" H 2200 3400 50  0001 C CNN
+	1    2200 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoilgunComponents:L6115 M1
+U 1 1 59C291DF
+P 5300 2400
+F 0 "M1" H 5750 2800 60  0000 C CNN
+F 1 "L6115" H 4900 2800 60  0000 C CNN
+F 2 "Coilgun_Footprints:Multiwatt-15" H 5750 2800 60  0001 C CNN
+F 3 "" H 5750 2800 60  0001 C CNN
+	1    5300 2400
+	1    0    0    -1  
+$EndComp
+Text Label 5900 2900 0    60   ~ 0
+VCC_COIL
+Text Label 4550 2600 2    60   ~ 0
+MOSFET_EN
+Text Label 3400 2400 0    60   ~ 0
+MOSFET_EN
+Text Label 6050 2300 0    60   ~ 0
+VCC_MOSFET
+$Comp
+L GND #PWR01
+U 1 1 59C29821
+P 6050 2550
+F 0 "#PWR01" H 6050 2300 50  0001 C CNN
+F 1 "GND" H 6050 2400 50  0000 C CNN
+F 2 "" H 6050 2550 50  0001 C CNN
+F 3 "" H 6050 2550 50  0001 C CNN
+	1    6050 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoilgunComponents:L6115 M2
+U 1 1 59C299F5
+P 7550 2400
+F 0 "M2" H 8000 2800 60  0000 C CNN
+F 1 "L6115" H 7150 2800 60  0000 C CNN
+F 2 "Coilgun_Footprints:Multiwatt-15" H 8000 2800 60  0001 C CNN
+F 3 "" H 8000 2800 60  0001 C CNN
+	1    7550 2400
+	1    0    0    -1  
+$EndComp
+Text Label 8150 2900 0    60   ~ 0
+VCC_COIL
+Text Label 6800 2600 2    60   ~ 0
+MOSFET_EN
+Text Label 8300 2300 0    60   ~ 0
+VCC_MOSFET
+$Comp
+L GND #PWR02
+U 1 1 59C29A18
+P 8300 2550
+F 0 "#PWR02" H 8300 2300 50  0001 C CNN
+F 1 "GND" H 8300 2400 50  0000 C CNN
+F 2 "" H 8300 2550 50  0001 C CNN
+F 3 "" H 8300 2550 50  0001 C CNN
+	1    8300 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoilgunComponents:L6115 M3
+U 1 1 59C29B6A
+P 9800 2400
+F 0 "M3" H 10250 2800 60  0000 C CNN
+F 1 "L6115" H 9400 2800 60  0000 C CNN
+F 2 "Coilgun_Footprints:Multiwatt-15" H 10250 2800 60  0001 C CNN
+F 3 "" H 10250 2800 60  0001 C CNN
+	1    9800 2400
+	1    0    0    -1  
+$EndComp
+Text Label 10400 2900 0    60   ~ 0
+VCC_COIL
+Text Label 9050 2600 2    60   ~ 0
+MOSFET_EN
+Text Label 10550 2300 0    60   ~ 0
+VCC_MOSFET
+$Comp
+L GND #PWR03
+U 1 1 59C29B8D
+P 10550 2550
+F 0 "#PWR03" H 10550 2300 50  0001 C CNN
+F 1 "GND" H 10550 2400 50  0000 C CNN
+F 2 "" H 10550 2550 50  0001 C CNN
+F 3 "" H 10550 2550 50  0001 C CNN
+	1    10550 2550
+	1    0    0    -1  
+$EndComp
+Text Label 5050 3050 0    60   ~ 0
+COIL_1
+Text Label 7300 3050 0    60   ~ 0
+COIL_2
+Text Label 9550 3050 0    60   ~ 0
+COIL_3
+Text Label 2050 950  0    60   ~ 0
+VCC_MCU
+$Comp
+L GND #PWR04
+U 1 1 59C2A26C
+P 2050 5500
+F 0 "#PWR04" H 2050 5250 50  0001 C CNN
+F 1 "GND" H 2050 5350 50  0000 C CNN
+F 2 "" H 2050 5500 50  0001 C CNN
+F 3 "" H 2050 5500 50  0001 C CNN
+	1    2050 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoilgunComponents:FTDI F1
+U 1 1 59C2AAB5
+P 4100 3650
+F 0 "F1" H 4250 4150 60  0000 C CNN
+F 1 "FTDI" H 3950 4150 60  0000 C CNN
+F 2 "Coilgun_Footprints:FTDI" H 4100 3650 60  0001 C CNN
+F 3 "" H 4100 3650 60  0001 C CNN
+	1    4100 3650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Conn_02x03_Odd_Even J2
+U 1 1 59C2AD65
+P 5250 3450
+F 0 "J2" H 5300 3650 50  0000 C CNN
+F 1 "ISP_HEADER" H 5300 3250 50  0000 C CNN
+F 2 "Coilgun_Footprints:ISP_HEADER" H 5250 3450 50  0001 C CNN
+F 3 "" H 5250 3450 50  0001 C CNN
+	1    5250 3450
+	1    0    0    -1  
+$EndComp
+Text Label 3200 3100 0    60   ~ 0
+MOSI
+Text Label 3200 3200 0    60   ~ 0
+MISO
+Text Label 3200 3300 0    60   ~ 0
+SCK
+Text Label 1200 1700 2    60   ~ 0
+RESET
+Text Label 5550 3450 0    60   ~ 0
+MOSI
+Text Label 5050 3350 2    60   ~ 0
+MISO
+Text Label 5050 3450 2    60   ~ 0
+SCK
+Text Label 5050 3550 2    60   ~ 0
+RESET
+$Comp
+L GND #PWR05
+U 1 1 59C2B57E
+P 5650 3600
+F 0 "#PWR05" H 5650 3350 50  0001 C CNN
+F 1 "GND" H 5650 3450 50  0000 C CNN
+F 2 "" H 5650 3600 50  0001 C CNN
+F 3 "" H 5650 3600 50  0001 C CNN
+	1    5650 3600
+	1    0    0    -1  
+$EndComp
+Text Label 5550 3350 0    60   ~ 0
+VCC_MCU
+Wire Wire Line
+	5000 2900 5300 2900
+Connection ~ 5000 2900
+Connection ~ 5100 2900
+Connection ~ 5200 2900
+Wire Wire Line
+	5450 2900 5900 2900
+Connection ~ 5550 2900
+Connection ~ 5650 2900
+Connection ~ 5750 2900
+Wire Wire Line
+	4550 1700 4550 2450
+Wire Wire Line
+	5000 2900 5000 3050
+Wire Wire Line
+	3200 2400 3400 2400
+Connection ~ 4550 2350
+Connection ~ 4550 2250
+Connection ~ 4550 2150
+Wire Wire Line
+	6050 2500 6050 2550
+Wire Wire Line
+	7250 2900 7550 2900
+Connection ~ 7250 2900
+Connection ~ 7350 2900
+Connection ~ 7450 2900
+Wire Wire Line
+	7700 2900 8150 2900
+Connection ~ 7800 2900
+Connection ~ 7900 2900
+Connection ~ 8000 2900
+Wire Wire Line
+	6800 1800 6800 2450
+Wire Wire Line
+	7250 2900 7250 3050
+Connection ~ 6800 2350
+Connection ~ 6800 2250
+Connection ~ 6800 2150
+Wire Wire Line
+	8300 2500 8300 2550
+Wire Wire Line
+	9500 2900 9800 2900
+Connection ~ 9500 2900
+Connection ~ 9600 2900
+Connection ~ 9700 2900
+Wire Wire Line
+	9950 2900 10400 2900
+Connection ~ 10050 2900
+Connection ~ 10150 2900
+Connection ~ 10250 2900
+Wire Wire Line
+	9050 1900 9050 2450
+Wire Wire Line
+	9500 2900 9500 3050
+Connection ~ 9050 2350
+Connection ~ 9050 2250
+Connection ~ 9050 2150
+Wire Wire Line
+	10550 2500 10550 2550
+Wire Wire Line
+	4550 1700 3200 1700
+Wire Wire Line
+	3200 1800 6800 1800
+Wire Wire Line
+	3200 1900 9050 1900
+Wire Wire Line
+	5000 3050 5050 3050
+Wire Wire Line
+	9500 3050 9550 3050
+Wire Wire Line
+	7250 3050 7300 3050
+Wire Wire Line
+	2050 1400 2350 1400
+Wire Wire Line
+	2050 950  2050 1400
+Connection ~ 2050 1400
+Wire Wire Line
+	2050 5400 2350 5400
+Wire Wire Line
+	2050 5400 2050 5500
+Connection ~ 2050 5400
+Wire Wire Line
+	5550 3550 5650 3550
+Wire Wire Line
+	5650 3550 5650 3600
+Wire Wire Line
+	3200 4500 3500 4500
+Wire Wire Line
+	3500 4500 3500 3700
+Wire Wire Line
+	3500 3700 3650 3700
+Wire Wire Line
+	3650 4100 3400 4100
+Wire Wire Line
+	3400 4100 3400 4400
+Wire Wire Line
+	3400 4400 3200 4400
+$Comp
+L GND #PWR06
+U 1 1 59C2B7AD
+P 3600 3500
+F 0 "#PWR06" H 3600 3250 50  0001 C CNN
+F 1 "GND" H 3600 3350 50  0000 C CNN
+F 2 "" H 3600 3500 50  0001 C CNN
+F 3 "" H 3600 3500 50  0001 C CNN
+	1    3600 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 59C2B7D1
+P 4600 4100
+F 0 "#PWR07" H 4600 3850 50  0001 C CNN
+F 1 "GND" H 4600 3950 50  0000 C CNN
+F 2 "" H 4600 4100 50  0001 C CNN
+F 3 "" H 4600 4100 50  0001 C CNN
+	1    4600 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3500 3650 3500
+Wire Wire Line
+	4550 4100 4600 4100
+$Comp
+L R R1
+U 1 1 59C2BA09
+P 3400 2550
+F 0 "R1" V 3480 2550 50  0000 C CNN
+F 1 "1k" V 3400 2550 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3330 2550 50  0001 C CNN
+F 3 "" H 3400 2550 50  0001 C CNN
+	1    3400 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 59C2BA3E
+P 3400 2700
+F 0 "#PWR08" H 3400 2450 50  0001 C CNN
+F 1 "GND" H 3400 2550 50  0000 C CNN
+F 2 "" H 3400 2700 50  0001 C CNN
+F 3 "" H 3400 2700 50  0001 C CNN
+	1    3400 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Crystal Y1
+U 1 1 59C2BA9D
+P 1150 2250
+F 0 "Y1" H 1150 2400 50  0000 C CNN
+F 1 "16MHz" H 1150 2100 50  0000 C CNN
+F 2 "Coilgun_Footprints:QuarzCrystal" H 1150 2250 50  0001 C CNN
+F 3 "" H 1150 2250 50  0001 C CNN
+	1    1150 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1050 2100 1200 2100
+Wire Wire Line
+	1050 2400 1200 2400
+$Comp
+L C C1
+U 1 1 59C2BBF9
+P 900 2100
+F 0 "C1" V 750 2050 50  0000 L CNN
+F 1 "16pF" H 925 2000 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 938 1950 50  0001 C CNN
+F 3 "" H 900 2100 50  0001 C CNN
+	1    900  2100
+	0    1    1    0   
+$EndComp
+$Comp
+L C C2
+U 1 1 59C2BC3A
+P 900 2400
+F 0 "C2" V 750 2350 50  0000 L CNN
+F 1 "16pF" H 925 2300 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 938 2250 50  0001 C CNN
+F 3 "" H 900 2400 50  0001 C CNN
+	1    900  2400
+	0    1    1    0   
+$EndComp
+Connection ~ 1150 2100
+Connection ~ 1150 2400
+$Comp
+L GND #PWR09
+U 1 1 59C2BF88
+P 700 2450
+F 0 "#PWR09" H 700 2200 50  0001 C CNN
+F 1 "GND" H 700 2300 50  0000 C CNN
+F 2 "" H 700 2450 50  0001 C CNN
+F 3 "" H 700 2450 50  0001 C CNN
+	1    700  2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  2100 700  2450
+Wire Wire Line
+	700  2100 750  2100
+Wire Wire Line
+	750  2400 700  2400
+Connection ~ 700  2400
+Text Label 1200 2900 2    60   ~ 0
+VCC_MCU
+$Comp
+L C C3
+U 1 1 59C2C5BA
+P 2200 1050
+F 0 "C3" H 2225 1150 50  0000 L CNN
+F 1 "xF" H 2225 950 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 2238 900 50  0001 C CNN
+F 3 "" H 2200 1050 50  0001 C CNN
+	1    2200 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 59C2C607
+P 2450 1150
+F 0 "#PWR010" H 2450 900 50  0001 C CNN
+F 1 "GND" H 2450 1000 50  0000 C CNN
+F 2 "" H 2450 1150 50  0001 C CNN
+F 3 "" H 2450 1150 50  0001 C CNN
+	1    2450 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 1050 2450 1050
+Wire Wire Line
+	2450 1050 2450 1150
+$Comp
+L Conn_01x02 J1
+U 1 1 59C2C8D8
+P 5200 4750
+F 0 "J1" H 5200 4850 50  0000 C CNN
+F 1 "ST" H 5200 4550 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 5200 4750 50  0001 C CNN
+F 3 "" H 5200 4750 50  0001 C CNN
+	1    5200 4750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Conn_01x02 J3
+U 1 1 59C2C9A9
+P 5700 4750
+F 0 "J3" H 5700 4850 50  0000 C CNN
+F 1 "ST" H 5700 4550 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 5700 4750 50  0001 C CNN
+F 3 "" H 5700 4750 50  0001 C CNN
+	1    5700 4750
+	0    -1   1    0   
+$EndComp
+Text Label 5300 4550 1    60   ~ 0
+COIL_1
+Text Label 5800 4550 1    60   ~ 0
+COIL_2
+Text Label 6300 4550 1    60   ~ 0
+COIL_3
+$Comp
+L Conn_01x02 J5
+U 1 1 59C2CC6C
+P 6700 4750
+F 0 "J5" H 6700 4850 50  0000 C CNN
+F 1 "ST" H 6700 4550 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 6700 4750 50  0001 C CNN
+F 3 "" H 6700 4750 50  0001 C CNN
+	1    6700 4750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Conn_01x02 J6
+U 1 1 59C2CCBC
+P 7500 4850
+F 0 "J6" H 7500 4950 50  0000 C CNN
+F 1 "ST" H 7500 4650 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 7500 4850 50  0001 C CNN
+F 3 "" H 7500 4850 50  0001 C CNN
+	1    7500 4850
+	0    -1   1    0   
+$EndComp
+Text Label 6700 4550 1    60   ~ 0
+VCC_COIL
+Text Label 7500 4650 1    60   ~ 0
+VCC_MCU
+Text Label 6800 4550 1    60   ~ 0
+VCC_COIL
+Text Label 7600 4650 1    60   ~ 0
+VCC_MOSFET
+$Comp
+L Conn_01x02 J4
+U 1 1 59C2D973
+P 6200 4750
+F 0 "J4" H 6200 4850 50  0000 C CNN
+F 1 "ST" H 6200 4550 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 6200 4750 50  0001 C CNN
+F 3 "" H 6200 4750 50  0001 C CNN
+	1    6200 4750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Conn_01x02 J7
+U 1 1 59C2DA5D
+P 7900 4850
+F 0 "J7" H 7900 4950 50  0000 C CNN
+F 1 "ST" H 7900 4650 50  0000 C CNN
+F 2 "Coilgun_Footprints:ScrewTerminal" H 7900 4850 50  0001 C CNN
+F 3 "" H 7900 4850 50  0001 C CNN
+	1    7900 4850
+	0    -1   1    0   
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 59C2DAA1
+P 8150 4600
+F 0 "#PWR011" H 8150 4350 50  0001 C CNN
+F 1 "GND" H 8150 4450 50  0000 C CNN
+F 2 "" H 8150 4600 50  0001 C CNN
+F 3 "" H 8150 4600 50  0001 C CNN
+	1    8150 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4650 7900 4650
+Wire Wire Line
+	8000 4650 8000 4600
+Wire Wire Line
+	8000 4600 8150 4600
+Connection ~ 8000 4650
+Wire Notes Line
+	5000 4850 7000 4850
+Wire Notes Line
+	8250 4950 8250 4050
+Wire Notes Line
+	8250 4050 7300 4050
+Wire Notes Line
+	7300 4050 7300 4950
+Wire Notes Line
+	7300 4950 8250 4950
+Text Notes 4950 5100 0    60   ~ 0
+Higher Voltage and Current Containment\nThis is connected separately
+Wire Notes Line
+	5500 4850 5500 4100
+Wire Notes Line
+	5000 4100 7000 4100
+Wire Notes Line
+	7000 4100 7000 4850
+Wire Notes Line
+	5000 4100 5000 4850
+Wire Notes Line
+	6000 4850 6000 4100
+Wire Notes Line
+	6500 4850 6500 4100
+Wire Notes Line
+	4950 4050 7050 4050
+Wire Notes Line
+	7050 4050 7050 4900
+Wire Notes Line
+	4950 4050 4950 4900
+Wire Notes Line
+	4950 4900 7050 4900
+Text Notes 7300 5250 0    60   ~ 0
+Low Voltage and \nCurrent containment\nNot dangerous
+Text Label 5700 4550 1    60   ~ 0
+COIL_2
+Text Label 5200 4550 1    60   ~ 0
+COIL_1
+Text Label 6200 4550 1    60   ~ 0
+COIL_3
+$Comp
+L CoilgunComponents:LightSensor S1
+U 1 1 59C2EC18
+P 3800 4700
+F 0 "S1" H 3950 4600 60  0000 C CNN
+F 1 "LightSensor" H 3850 4900 60  0000 C CNN
+F 2 "Coilgun_Footprints:LightSensor" H 3300 5300 60  0001 C CNN
+F 3 "" H 3300 5300 60  0001 C CNN
+	1    3800 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 4600 3600 4600
+Wire Wire Line
+	3200 4700 3600 4700
+Connection ~ 2050 1050
+$EndSCHEMATC

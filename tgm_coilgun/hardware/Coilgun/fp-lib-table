@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Coilgun_Footprints)(type KiCad)(uri "$(KIPRJMOD)/Coilgun_Footprints.pretty")(options "")(descr ""))
+)
