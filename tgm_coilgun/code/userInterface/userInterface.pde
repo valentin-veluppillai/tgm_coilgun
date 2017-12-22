@@ -4,7 +4,7 @@ userInterface.pde
 
 author: valentin veluppilai
 project: tgm_coilgun
-version: 1.0
+version: 0.1
 date: 22.12.17
 
 simple ui for the coilgun
