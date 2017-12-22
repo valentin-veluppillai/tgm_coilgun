@@ -1,6 +1,6 @@
 # tgm_coilgun
 Coilgun (or magnetic accelerator) built at tgm, for educational purposes
-##software used
+## software used
 * processing - used for UI
 * kiCad - schematic and layout design
 * avrstudio - programming of the microproscessor
