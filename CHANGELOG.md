@@ -4,3 +4,6 @@
 * new schematic and layout
 ### Changed
 * simplified and updated ui code
+### Removed
+* old arduino files
+* high score sounds
