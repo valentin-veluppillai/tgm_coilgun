@@ -6,5 +6,5 @@ Coilgun (or magnetic accelerator) built at tgm, for educational purposes
 * avrstudio - programming of the microcontroller
 ## user interface
 Written in Java/processing unsing the controlp5 library. The computer running
-the UI communicates with the mincontroller via SPI. The UI allows the user to
-specify the timings of the coils power supplies.
+the UI communicates with the mincontroller via USART. The UI allows the user to
+specify the timing of the coil power supplies.
