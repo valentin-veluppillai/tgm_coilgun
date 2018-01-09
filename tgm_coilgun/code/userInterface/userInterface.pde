@@ -7,7 +7,10 @@ project: tgm_coilgun
 version: 0.1
 date: 22.12.17
 
-simple ui for the coilgun
+simple ui for the coilgun. only works when an appropriate device is connected
+
+transmission of data in function controlEvent()
+order: coil 1 (bottom), coil 2 (middle), coil 3 (top)
 */
 
 import controlP5.*;
@@ -15,6 +18,7 @@ import processing.serial.*;
 
 
 ControlP5 controlP5;
+//Serial.list() can be replaced with path to serial device when used on linux
 Serial serial = new Serial(this, Serial.list()[1], 9600);
 PImage logo;
 
@@ -44,21 +48,21 @@ void setup() {
         ControlFont cf1 = new ControlFont(pfont, int(height*0.0555556));
         logo = loadImage("tgmlogo.png");
 
-        controlP5.addSlider(" Coil 3")
+        controlP5.addSlider(" Coil 3")  //top coil
         .setRange(1,100)
         .setValue(1)
         .setPosition( int(width*0.078125), int(height*0.0740741))
         .setSize( int(width*0.3125),int(height*0.0648148))
         .setFont(cf1);
 
-        controlP5.addSlider(" Coil 2")
+        controlP5.addSlider(" Coil 2")  //middle coil
         .setRange(1,100)
         .setValue(1)
         .setPosition( int(width*0.078125), int(height*0.1666667))
         .setSize( int(width*0.3125), int(height*0.0648148))
         .setFont(cf1);
 
-        controlP5.addSlider(" Coil 1")
+        controlP5.addSlider(" Coil 1") //bottom coil
         .setRange(1,100)
         .setValue(1)
         .setPosition( int(width*0.078125), int(height*0.2592593))
@@ -70,7 +74,7 @@ void setup() {
         .setSize( int(width*0.15625), int(height*0.1296296))
         .setFont(cf1);
 
-        smooth();
+        smooth();string
         fullScreen();
 
 }
@@ -82,8 +86,10 @@ void draw() {
 
   if(serial.available() > 0) {
     tmp = serial.readBytes();
-    tmpstring = new String(tmp);
-    tmpint = Integer.parseInt(trim(tmpstring));
+    //redo this
+    tmpstring = new String(tmp);    //convert transmission to srting
+    tmpint = Integer.parseInt(trim(tmpstring)); // ---"--- to int
+    //sometime
     us = dist/(float(tmpint)/1000000);   //convert measured time to speed
     if(score > hs)
         hs = us;
@@ -107,44 +113,43 @@ void draw() {
 
 }
 
+//cp5 function, is called everytime the user interacts with an cp5 objects
 void controlEvent(ControlEvent theEvent) {
-        if(theEvent.isController()) {
-                if(theEvent.getController().getName()==" Coil 1") {
-                        time1 = int(1000 * controlP5.getController(" Coil 1").getValue());
-                        time1b = adjustByteArray(convertToBytes(time1));
-                }
+  if(theEvent.isController()) {
+    if(theEvent.getController().getName()==" Coil 1") {
+      time1 = int(1000 * controlP5.getController(" Coil 1").getValue());
+      time1b = adjustByteArray(intToByte(time1));
+    }
 
-                if(theEvent.getController().getName()==" Coil 2") {
-                        time2 = int(1000 * controlP5.getController(" Coil 2").getValue());
-                        time2b = adjustByteArray(convertToBytes(time2));
-                }
+    if(theEvent.getController().getName()==" Coil 2") {
+      time2 = int(1000 * controlP5.getController(" Coil 2").getValue());
+      time2b = adjustByteArray(intToByte(time2));
+    }
 
-                if(theEvent.getController().getName()==" Coil 3") {
-                        time3 = int(1000 * controlP5.getController(" Coil 3").getValue());
-                        time3b = adjustByteArray(convertToBytes(time3));
-                }
+    if(theEvent.getController().getName()==" Coil 3") {
+      time3 = int(1000 * controlP5.getController(" Coil 3").getValue());
+      time3b = adjustByteArray(intToByte(time3));
+    }
 
-                if(theEvent.getController().getName()=="Engage") {
-                        serial.write(time1b);
-                        serial.write(time2b);
-                        serial.write(time3b);
+    if(theEvent.getController().getName()=="Engage") {
+      serial.write(time1b);
+      serial.write(time2b);
+      serial.write(time3b);
+    }
+  }
+}
 
-                }
-
-        }
-}       //cp5 function, is called everytime the user interacts wuth an cp5 objects
-
-public static byte[] convertToBytes(int value) {
+public static byte[] intToByte(int value) {  //converts an int to byte[4]
   byte[] byteArray = new byte[4];
   int shift = 0;
   for (int i = 0; i < byteArray.length; i++) {
-    shift = i * 8; // 0,8,16,24
+    shift = i * 8; // go through each bit (0,8,16,24)
     byteArray[i] = (byte) (value >>> shift);
   }
   return byteArray;
-}   //converts an int to byte[4]
+}
 
-public byte reverseBitsByte(byte x) {
+public byte reverseByte(byte x) {   //reverses a byte
   int intSize = 8;
   byte y=0;
   for(int position=intSize-1; position>=0; position--){
@@ -152,11 +157,11 @@ public byte reverseBitsByte(byte x) {
     x >>= 1;
   }
   return y;
-}   //reverses a byte
+}
 
-public byte[] adjustByteArray(byte[] x) {
+public byte[] adjustByteArray(byte[] x) { //reverses every byte in a byte[]
   for(int i = 0; i < x.length; i++) {
-    x[i] = reverseBitsByte(x[i]);
+    x[i] = reverseByte(x[i]);
   }
   return x;
-}   //reverses every byte in an byte[]
+}
