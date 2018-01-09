@@ -1,4 +1,7 @@
 # Changelog
+## [0.2] - 9.1.18
+### Added
+* uC control code
 ## [0.1] - 22.12.17
 ### Added
 * new schematic and layout
