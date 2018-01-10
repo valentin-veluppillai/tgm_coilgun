@@ -19,6 +19,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/eeprom.h>
 
 uint32_t time[3] = {0};		//store timings for coils (moser 2lazy4arrays)
 
@@ -26,7 +27,7 @@ uint32_t ovf_count_t0 = 0; 	//chk size
 uint32_t ovf_count_t1 = 0;		//here 2
 
 uint32_t bullet_time = 0;		//var for bullet travel time
-
+uint8_t dun = 0;
 //bullet speed interrupts
 
 ISR(INT0_vect) {		//lower light barrier triggered
@@ -37,6 +38,7 @@ ISR(INT0_vect) {		//lower light barrier triggered
 ISR(INT1_vect) {		//upper light barrier triggered
 	TCCR1B = 0;		//stop timer 1 and save value
 	bullet_time = 4096 * ovf_count_t1 * 1000 + TCNT1 * 625 / 10;	//1 ovf = 4096us, 100 tics = 6.35us => 1 tic = 63.5ns --- that whole shit is in nanoseconds, with a 32 bit integer, unsigned, that should be enough
+	dun = 1;
 	return;
 }
 
@@ -65,6 +67,10 @@ void USART_Init() {
 	UCSRB = 0x18;	//enable transmitter and receiver
 }
 
+uint16_t eepromVar1 EEMEM;
+uint16_t eepromVar2 EEMEM;
+
+
 int main(void) {
 	
 	//setup timers
@@ -72,8 +78,8 @@ int main(void) {
 	OCR1A = 1600;
 	
 	//setup USART
-	DDRA = 0x00;
-	DDRA |= (1<<PD0)|(1<<PD1);
+	DDRD = 0x00;
+	DDRD |= (1<<PD0)|(1<<PD1);
 	USART_Init();
 	
 	while(1) {
@@ -87,18 +93,32 @@ int main(void) {
 	}
 	
 	//start launch
+	//setup coil-pins
+	DDRA = 0xFF;
+	PORTA = 0x00;
+	PORTA |= (1<<PA7);
+	
+	eeprom_update_word(&eepromVar1, (uint16_t)(time[1]));
+	eeprom_update_word(&eepromVar2, (uint16_t)(time[1]>>16));
+	
 	//activate timer 0
+	/*
+	sei();
 	TCCR0 = 1;
 	TIMSK |= (1<<OCIE0);
 	
 	//enable pin interrupts
 	MCUCR |= 0x0F;
 	
-	//setup coil-pins
-	DDRB = 0xFF;
-	PORTB = 0x00;
-	
 	//wait till timer 1 was stopped
+	while(dun==0);
+	cli();
 	//transmit the nanosecond time
+	for(int i = 0; i < 4; i++) {
+		while(!(UCSRA & (1<<UDRE)));
+		UDR = (char)(bullet_time>>(8*i));
+	}
+	bullet_time = 0;*/
+	
   }
 }

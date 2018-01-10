@@ -1,4 +1,7 @@
 # Changelog
+## [0.3] - 10.1.18
+### Changed
+* uC control code
 ## [0.2] - 9.1.18
 ### Added
 * uC control code
